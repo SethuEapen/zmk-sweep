@@ -26,9 +26,6 @@
             bindings = <&kp>, <&kp>;
         };
     };
-        
-    };
-
         keymap {
                 compatible = "zmk,keymap";
                 
@@ -60,7 +57,7 @@
 		};	
 		
 		tri_layer {
-        bindings = <
+	        bindings = <
 		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5 			&trans &trans   &trans   &trans  &trans
 		&kp F1 &kp F2 &kp F3 &kp F4 &kp F5  						&trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
 		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7   				&trans &kp PG_DN  &kp K_VOL_DN  &trans &trans   
