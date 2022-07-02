@@ -43,7 +43,8 @@
 		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
 		&kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH 		&kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL 
 		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL 
-					    &mo 1  &kp LSFT  					&kp RGUI &mo 2 
+					    &mo 1  &kp LSFT  					&kp RGUI &mo 3 
+
 		>;
 		};
 		
@@ -58,9 +59,9 @@
 		
 		tri_layer {
 	        bindings = <
-		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5 			&trans &trans   &trans   &trans  &trans
-		&kp F1 &kp F2 &kp F3 &kp F4 &kp F5  						&trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
-		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7   				&trans &kp PG_DN  &kp K_VOL_DN  &trans &trans   
+		&kp F1  &kp F2  &kp F3  &kp F4  &kp F5 				&trans &kp RALT &trans   &kp K_MUTE   &kp C_NEXT
+		&kp F6 &kp F7 &kp F8 &kp F9 &kp F10  				&trans &kp RGUI &kp PG_UP  &kp K_VOL_UP &kp C_PP
+		&kp F11 &kp F12 &kp LALT &kp LCTRL &kp LGUI   		&trans &kp RCTRL &kp PG_DN  &kp K_VOL_DN  &kp C_PREV
 					 &trans &trans  					&trans &trans 
 		>;
 		};	
