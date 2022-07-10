@@ -42,7 +42,7 @@
 		bindings = <
 		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
 		&kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH 		&kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL 
-		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL 
+		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp QMARK 
 					    &mo 1  &kp LSFT  					&kp RGUI &mo 3 
 
 		>;
@@ -65,6 +65,23 @@
 					 &trans &trans  					&trans &trans 
 		>;
 		};	
+
+		minecraft {
+	        bindings = <
+		&kp NUM_1 &kp NUM_2 &kp W &kp E &kp NUM_3 						&kp T &kp F1 &kp F2 &kp F3 &kp F5
+		&kp LSFT &kp A &kp S &kp D &kp NUM_4 	    					&kp BSLH &kp C &kp V &kp L &kp F11
+		&kp LCTRL &kp NUM_5 &kp Q &kp NUM_6 &kp F				        &kp Z &kp X  &kp C &kp V &mt RSFT RET
+          				&mo 1 &kp SPC  				&kp SPC &tog 5 
+		>;
+		};
+
+			alpha_no_layers {
+		bindings = <
+		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U &kp I &kp O &kp P
+		&kp A &kp S &kp D &kp F &kp G 	    				&kp H &kp J &kp K &kp L &kp BKSP
+		&kp Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
+          				&mo 1 &kp LSFT  				&kp SPC &tog 5
+		>;
         
 	};
 };
