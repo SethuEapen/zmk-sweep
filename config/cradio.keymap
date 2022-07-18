@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY 0
 #define LMOD 1
@@ -56,9 +57,9 @@
 
        		left_layer {
 		bindings = <
-		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
-		&kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH 		&kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL 
-		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp QMARK 
+		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0
+		&kp TAB    &kp LC(S)    &kp UNDER      &kp SCLN     &trans 		&kp HOME &kp END  &kp LBKT &kp RBKT  &kp DEL
+		&kp ESC    &kp TILDE 	&kp GRAVE	 &trans  &trans 	&kp AMPS &kp PIPE &kp FSLH &kp BSLH  &kp QMARK
 					    &mo LMOD  &kp LSFT  					&kp RGUI &mo TRI 
 
 		>;
@@ -66,18 +67,18 @@
 		
 			right_layer {
 		bindings = <
-		&kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT    			&kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN 
-		&kp TAB  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN 			&kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp QUOT
-		&kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH    			&kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
+		&kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT    			&kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
+		&kp TAB  &kp MINUS &kp UNDER &kp SCLN  &kp COLN 			&trans &kp LBRC  &kp RBRC  &kp DQT &kp QUOT
+		&kp ESC  &kp PLUS &kp EQL &kp HOME &kp END    			&trans &kp LEFT &kp DOWN &kp UP  &kp RIGHT
 					  &mo TRI &kp LSFT  				&kp SPC  &mo RMOD 
 		>;
 		};	
 		
 			tri_layer {
 	    bindings = <
-		&kp F1  &kp F2  &kp F3  &kp F4  &kp F5 				&bt BT_CLR &kp RALT &trans   &kp K_MUTE   &kp C_NEXT
-		&kp F6 &kp F7 &kp F8 &kp F9 &kp F10  				&bt BT_NXT &kp RGUI &kp PG_UP  &kp K_VOL_UP &kp C_PP
-		&kp F11 &kp F12 &kp LALT &kp LCTRL &kp LGUI   		&bt BT_PRV &kp RCTRL &kp PG_DN  &kp K_VOL_DN  &kp C_PREV
+		&kp F1  &kp F2  &kp F3  &kp F4  &kp F5 				&bt BT_CLR &out OUT_TOG &trans   &kp C_MUTE   &kp C_NEXT
+		&kp F6 &kp F7 &kp F8 &kp F9 &kp F10  				&bt BT_NXT &kp C_BRI_UP &kp PG_UP  &kp C_VOL_UP &kp C_PP
+		&kp F11 &kp F12 &kp LALT &kp LCTRL &kp LGUI   		&bt BT_PRV &kp C_BRI_DEC &kp PG_DN  &kp C_VOL_DN  &kp C_PREV
 					 &trans &trans  					&trans &trans 
 		>;
 		};	
@@ -86,7 +87,7 @@
 	    bindings = <
 		&kp NUM_1 &kp NUM_2 &kp W &kp E &kp NUM_3 						&kp T &kp F1 &kp F2 &kp F3 &kp F5
 		&kp LSFT &kp A &kp S &kp D &kp NUM_4 	    					&kp BSLH &kp C &kp V &kp L &kp F11
-		&kp LCTRL &kp NUM_5 &kp Q &kp NUM_6 &kp F				        &kp Z &kp X  &kp C &kp V &mt RSFT RET
+		&kp LCTRL &kp NUM_5 &kp Q &kp NUM_6 &kp F				        &kp Z &kp X  &kp ESC &kp V &mt RSFT RET
           				&mo LMOD &kp SPC  				&kp SPC &tog BASEALPHA
 		>;
 		};
