@@ -15,6 +15,7 @@
 #define TRI 3
 #define MINE 4
 #define BASEALPHA 5
+#define RMINE 6
 
 &mt {
   //  flavor = "tap-preferred";
@@ -95,10 +96,19 @@
 			alpha_no_layers {
 		bindings = <
 		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U &kp I &kp O &kp P
-		&kp A &kp S &kp D &kp F &kp G 	    				&kp H &kp J &kp K &kp L &kp BKSP
+		&kp A &hm LALT S &hm LCTRL D &hm LGUI F &kp G 	    &kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP
 		&kp Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
-          				&mo LMOD &kp LSFT  				&kp SPC &tog BASEALPHA
+          				&mo LMOD &kp LSFT  				&kp SPC &mo RMINE
 		>;
         };
+
+			right_game_layer {
+		bindings = <
+		&kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT    			&kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
+		&kp TAB  &kp MINUS &kp UNDER &kp SCLN  &kp COLN 			&tog BASEALPHA &kp LBRC  &kp RBRC  &kp DQT &kp QUOT
+		&kp ESC  &kp PLUS &kp EQL &kp HOME &kp END    			&trans &kp LEFT &kp DOWN &kp UP  &kp RIGHT
+					  &mo TRI &kp LSFT  				&kp SPC  &mo RMINE
+		>;
+		};	
 	};
 };
