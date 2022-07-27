@@ -9,13 +9,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define MINE 0
-#define QWERTY 1
-#define BASEALPHA 2
-#define LMOD 3
-#define RMOD 4
-#define RMINE 5
-#define TRI 6
+
+#define QWERTY 0
+#define MINE 1
+#define RESOLVE 2
+#define BASEALPHA 3
+#define LMOD 4
+#define RMOD 5
+#define RMINE 6
+#define TRI 7
 
 
 &mt {
@@ -43,10 +45,25 @@
             key-positions = <2 7 25 26>;
             bindings = <&tog MINE>;
 		};
+		compatible = "zmk,combos";
+		combo_resolve {
+			timeout-ms = <50>;
+            key-positions = <2 4 7 12>;
+            bindings = <&tog RESOLVE>;
+		};
 	};
 
     keymap {
             compatible = "zmk,keymap";
+
+       		default_layer {
+		bindings = <
+		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U &kp I &kp O &kp P
+		&kp A &hm LALT S &hm LCTRL D &hm LGUI F &kp G 	    &kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP
+		&kp Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
+          				&mo LMOD &kp LSFT  				&kp SPC &mo RMOD 
+		>;
+		};
 
 			minecraft {
 	    bindings = <
@@ -57,13 +74,12 @@
 		>;
 		};
 
-
-       		default_layer {
+			resolve {
 		bindings = <
-		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U &kp I &kp O &kp P
-		&kp A &hm LALT S &hm LCTRL D &hm LGUI F &kp G 	    &kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP
-		&kp Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
-          				&mo LMOD &kp LSFT  				&kp SPC &mo RMOD 
+		&kp LEFT &kp RIGHT &kp J &kp L &kp BKSP 						&kp Y &kp U &kp I &kp O &kp P
+		&kp LC(LS(Z)) &kp A &kp B &kp LC(B) &kp DEL 	    &kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP
+		&kp LC(Z) &kp X &kp C &kp V &kp N				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
+          				&kp LCTRL &kp SPC  				&kp SPC &mo BASEALPHA 
 		>;
 		};
 
