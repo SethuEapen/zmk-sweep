@@ -13,11 +13,13 @@
 #define QWERTY 0
 #define MINE 1
 #define RESOLVE 2
-#define BASEALPHA 3
-#define LMOD 4
-#define RMOD 5
-#define RMINE 6
-#define TRI 7
+#define ONE 3
+#define ONEMOD 4
+#define BASEALPHA 5
+#define LMOD 6
+#define RMOD 7
+#define RMINE 8
+#define TRI 9
 
 
 &mt {
@@ -36,6 +38,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+		lm: layer_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
     };
 
 	combos {
@@ -50,6 +61,12 @@
 			timeout-ms = <50>;
             key-positions = <2 4 7 12>;
             bindings = <&tog RESOLVE>;
+		};
+		compatible = "zmk,combos";
+		combo_resolve {
+			timeout-ms = <50>;
+            key-positions = <1 10 17 25>;
+            bindings = <&tog ONE>;
 		};
 	};
 
@@ -67,10 +84,10 @@
 
 			minecraft {
 	    bindings = <
-		&kp NUM_1 &kp NUM_2 &kp W &kp E &kp NUM_3 						&kp T &kp F1 &kp F2 &kp F3 &kp F5
-		&kp LSFT &kp A &kp S &kp D &kp NUM_4 	    					&kp BSLH &kp C &kp V &kp L &kp F11
-		&kp LCTRL &kp NUM_5 &kp Q &kp NUM_6 &kp F				        &kp Z &kp X  &kp ESC &kp V &mt RSFT RET
-          				&mo LMOD &kp SPC  				&kp SPC &tog BASEALPHA
+		&kp TAB &kp Q &kp W &kp E &kp R 						&kp T &kp Y &kp U &kp I &kp O
+		&kp LSFT &kp A &kp S &kp D &kp F 	    					&kp G &kp H &kp J &kp K &kp L
+		&kp LCTRL &kp Z &kp X &kp C &kp V				        &kp B &kp N  &kp M &kp CMMA &mt RSFT RET
+          				&mo LMOD &kp SPC  				&tog BASEALPHA &mo RMOD 
 		>;
 		};
 
@@ -80,6 +97,24 @@
 		&kp LC(LS(Z)) &kp A &kp B &kp LC(B) &kp DEL 	    &kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP
 		&kp LC(Z) &kp X &kp C &kp V &kp N				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
           				&kp LCTRL &kp SPC  				&kp SPC &mo BASEALPHA 
+		>;
+		};
+
+			one_handed {
+		bindings = <
+		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U &kp I &kp O &kp P
+		&kp A &hm LALT S &hm LCTRL D &hm LGUI F &kp G 	    &kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP
+		&mt LSFT Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt RSFT RET
+          				&mo LMOD &lm ONEMOD SPC  				&lm ONEMOD SPC &mo RMOD 
+		>;
+		};
+
+			one_handed_second {
+		bindings = <
+		&kp Y &kp U &kp I &kp O &kp P						&kp Q &kp W &kp E &kp R &kp T 									
+		&kp H &hm RGUI J &hm RCTRL K &hm RALT L &kp BKSP	&kp A &hm LALT S &hm LCTRL D &hm LGUI F &kp G
+		&mt LSFT N &kp M  &kp CMMA &kp DOT &mt RSFT RET			&kp Z &kp X &kp C &kp V &mt RSFT B			 
+          				&mo LMOD &kp SPC  				&kp SPC &mo RMOD 
 		>;
 		};
 
@@ -128,6 +163,7 @@
 		&kp F11 &kp F12 &kp LALT &kp LCTRL &kp LGUI   		&bt BT_PRV &kp C_BRI_DEC &kp PG_DN  &kp C_VOL_DN  &kp C_PREV
 					 &trans &trans  					&trans &trans 
 		>;
-		};	
+		};
+
 	};
 };
